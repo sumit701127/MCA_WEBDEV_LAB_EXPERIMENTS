@@ -1,0 +1,48 @@
+<!-- Develop and demonstate ,using javascript script ,a xhtml document that collects the USN(the valid format is :A digit from 1 to 4 followed by two uppercase characters followed by two digits followed by two uppercase characters followed by three digits;no embedded spaces allowed)of the user.Event handler must be included for the form element that collects this information to validate the input .Messages in the alert windows must be producted when errors are detected. -->
+
+<!-- AIM: To validate the RGUID of the student and to print them -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDUID validator</title>
+
+</head>
+<body>
+    
+    <form onsubmit="formValidator()">
+        Enter your RGUID:<input type="text" id="usnFrm"/>
+        <br/>
+        <input type="submit" value="SUBMIT"/>
+    </form>
+
+    <script type="text/javascript">
+
+        function formValidator()
+        {
+            var usn = document.getElementById("usnFrm");
+
+            usnExp =/\d{2}\w{6}\d{5}$/;
+
+            if(usn.value.length ==0){
+                alert("RGU ID is empty.");
+                usn.focus();
+                return false;
+            }
+            else if(!usn.value.match(usnExp))
+            {
+                alert("ID should be in RGU ID format, eg, 24CSEMCA00001");
+                usn.focus();
+                return false;
+            }
+            else{
+                alert("RGUID :" +usn.value+ "is in correct format");
+                return true;
+            }
+        }
+
+    </script>
+</body>
+</html>
