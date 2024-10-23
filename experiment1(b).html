@@ -1,0 +1,32 @@
+ <!-- Input : A number n obtained using prompt
+output : A table of numbers from 1 to n and their squares using alert -->
+
+<!-- AIM: To display the square of a given numbers using javascript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers and its squares</title> 
+</head>
+<body>
+    
+    <script type="text/javascript">
+
+        var num = prompt("Enter a number : \n","");
+        var msgstr;
+
+        if(num>0 && num!=null){
+            msgstr = "Number and its squares are \n";
+            for(i=1;i<=num;i++){
+                msgstr = msgstr + i + " ^2 ="+ i*i + "\n";
+
+            }
+            alert(msgstr);
+        }
+        else
+            alert("invalid input");
+    </script>
+</body>
+</html>
