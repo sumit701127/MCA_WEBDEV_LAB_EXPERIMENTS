@@ -1,0 +1,53 @@
+<!-- Develop and demonstate ,using javascript script ,a xhtml document that collects the 
+ USN(the valid format is :A digit from 1 to 4 followed by two uppercase characters followed 
+ by two digits followed by two uppercase characters followed by three digits;no embedded 
+ spaces allowed)of the user.Event handler must be included for the form element that 
+ collects this information to validate the input .Messages in the alert windows must be 
+ produced when errors are detected.And modify the above program to get the current semester also
+ (restricted to be a number from 1 to 8) -->
+
+<!-- AIM : To display the current semester -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RGUID ,sem validator</title>
+  </head>
+  <body>
+    <h1>Form validation using javascript</h1>
+    <form onsubmit="formValidator()">
+      <p>Enter your RGUID:<input type="text" id="usnFrm" /></p>
+      <p>Enter your current semester:<input type="text" id="semFrm" /></p>
+      <input type="submit" value="SUBMIT" />
+    </form>
+
+    <script type="text/javascript">
+      function formValidator() {
+        var usn = document.getElementById("usnFrm");
+        var sem = document.getElementById("semFrm");
+
+        usnExp = /\d{2}\w{6}\d{5}$/;
+        semExp = /^([1-8])$/;
+
+        if (usn.value.length == 0) {
+          alert("RGU ID is empty.");
+          usn.focus();
+          return false;
+        } else if (!usn.value.match(usnExp)) {
+          alert("ID should be in RGU ID format, eg, 24CSEMCA00001");
+          usn.focus();
+          return false;
+        } else if (!sem.value.match(semExp)) {
+          alert("semester number should be from 1 to 8");
+          sem.focus();
+          return false;
+        } else {
+          alert("RGUID :" + usn.value + "\n Semester:" + sem.value);
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

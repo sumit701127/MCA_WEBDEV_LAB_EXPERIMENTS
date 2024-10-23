@@ -1,0 +1,67 @@
+<!-- Develop and demonstate ,using javascript script, a XTHML document that contains three short
+ paragraphs of text,stacked on the each other ,with only enough of each showing so that the 
+ mouse cursor can be placed over some part of them.when the cursor is placed over the exposed
+ part of any paragraph,it should rise to the top to become completely visible. -->
+
+<!-- AIM : To display the stacking of elements -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paragraph Stacking</title>
+    <style type="text/css">
+        .para{
+            border: solid thin black;
+            padding: 1em;
+            position: absolute;
+            width: 300px;
+        }
+        #layer1{
+            background-color: yellow;
+            top: 200px;
+            left: 400px;
+            z-index: 1;
+        }
+        #layer2{
+            background-color: red;
+            position: absolute;
+            top: 220px;
+            left: 420px;
+            z-index: 2;
+        }
+        #layer3{
+            background-color: blue;
+            top: 240px;
+            left: 440px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Visibility of stacked paragraphs using javascript</h3>
+    <div id="layer1" class="para" onmouseover="mover('layer1')">Web Technology</div>
+    <div id="layer2" class="para" onmouseover="mover('layer2')">Web Programming Laboratory</div>>
+    <div id="layer3" class="para" onmouseover="mover('layer3')">Experiment Stacking of paragraphs</div>>
+
+
+
+
+
+    <script type="text/javascript">
+
+        var topLayer = "layer3";
+        function mover(toTop){
+            var oldTop = document.getElementById(topLayer).style;
+            var newTop = document.getElementById(toTop).style;
+            oldTop.zIndex  = 0;
+            newTop.zIndex = 5;
+
+            topLayer = document.getElementById(toTop).id;
+        
+        }
+    </script>
+</body>
+</html>
