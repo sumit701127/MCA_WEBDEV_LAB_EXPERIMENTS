@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="student.css"?>
+<RGU>
+  <STUDENT class="student">
+    <USN>24-CSE-MCA-00-001</USN>
+    <NAME>ANIKET KUMAR</NAME>
+    <COLLEGE>RAJIV GANDHI UNIVERSITY</COLLEGE>
+    <BRANCH>Computer Science and Engineering</BRANCH>
+    <YEAR>2024</YEAR>
+    <EMAILID>annikemar824@gmail.com</EMAILID>
+  </STUDENT>
+  <STUDENT class="student">
+    <USN>24-CSE-MCA-00-004</USN>
+    <NAME>BIJAI SONAM</NAME>
+    <COLLEGE>RAJIV GANDHI UNIVERSITY</COLLEGE>
+    <BRANCH>Mechanical Engineering</BRANCH>
+    <YEAR>2023</YEAR>
+    <EMAILID>bijaisonam@gmail.com</EMAILID>
+  </STUDENT>
+  <STUDENT class="student">
+    <USN>24-CSE-MCA-00-010</USN>
+    <NAME>DAIMACHA BORO</NAME>
+    <COLLEGE>RAJIV GANDHI UNIVERSITY</COLLEGE>
+    <BRANCH>Computer Science and Engineering</BRANCH>
+    <YEAR>2022</YEAR>
+    <EMAILID>daimachaboro111@gmail.com</EMAILID>
+  </STUDENT>
+</RGU>

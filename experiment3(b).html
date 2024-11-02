@@ -1,0 +1,84 @@
+<!-- Modify the above document so that when a paragraph is moved from the top
+stacking position, it returns to its original position rather than to the bottom. -->
+
+<!-- AIM: To display the stacking of elements -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paragraph Stacking</title>
+    <style type="text/css">
+      .para {
+        border: solid thin black;
+        padding: 1cm;
+        position: absolute;
+        width: 300px;
+      }
+      #layer1 {
+        background-color: yellow;
+        top: 200px;
+        left: 400px;
+        z-index: 1;
+      }
+      #layer2 {
+        background-color: red;
+        position: absolute;
+        top: 220px;
+        left: 420px;
+        z-index: 2;
+      }
+      #layer3 {
+        background-color: blue;
+        top: 240px;
+        left: 440px;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Visibility of stacked paragraphs using Javascript</h3>
+    <div
+      id="layer1"
+      class="para"
+      onMouseOver="mover('layer1','1')"
+      onMouseOut="moveBack()"
+    >
+      Web Technology
+    </div>
+
+    <div
+      id="layer2"
+      class="para"
+      onMouseOver="mover('layer2','2')"
+      onMouseOut="moveBack()"
+    >
+      ------------Web Programming Laboratory----------
+    </div>
+
+    <div
+      id="layer3"
+      class="para"
+      onMouseOver="mover('layer3','3')"
+      onMouseOut="moveBack()"
+    >
+      ------------Experiment 5a - Stacking of paragraphs---
+    </div>
+
+    <script type="text/javascript">
+        var topLayer = "layer3";
+        var origPos;
+        function mover(toTop, pos) {
+          var newTop = document.getElementById(toTop).style;
+          newTop.zIndex = 5;
+          topLayer = document.getElementById(toTop).id;
+          origPos = pos;
+  
+          18;
+        }
+        function moveBack() {
+          var layer = document.getElementById(topLayer).style;
+          layer.zIndex = origPos;
+        }
+      </script>
+  </body>
+</html>
