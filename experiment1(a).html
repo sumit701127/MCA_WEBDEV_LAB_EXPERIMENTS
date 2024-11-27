@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fibonacci Series</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var fib1 = 0, fib2 = 1, fib = 0;
+      var num = prompt("Enter a number to generate Fibonacci series:", "");
+
+      // Check if the input is a valid number and greater than 0
+      if (num != null && num > 0) {
+        document.write("<h1>The first " + num + " numbers in the Fibonacci series:</h1>");
+
+        // Handle the case where num is 1
+        if (num == 1) {
+          document.write("<h2>" + fib1 + "</h2>");
+        } else {
+          // For num >= 2, display the first two numbers of the series
+          document.write("<h2>" + fib1 + "</h2>");
+          document.write("<h2>" + fib2 + "</h2>");
+
+          // Generate and display the rest of the Fibonacci numbers
+          for (var i = 3; i <= num; i++) {
+            fib = fib1 + fib2;
+            document.write("<h2>" + fib + "</h2>");
+            fib1 = fib2;
+            fib2 = fib;
+          }
+        }
+      } else {
+        alert("Invalid Input. Please enter a number greater than 0.");
+      }
+    </script>
+  </body>
+</html>
